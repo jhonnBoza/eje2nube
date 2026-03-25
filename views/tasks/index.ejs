@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks CRUD</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Tasks</h1>
+        <a class="btn" href="/tasks/new">Crear</a>
+      </header>
+
+      <% if (tasks.length === 0) { %>
+        <p class="muted">Todavía no hay tareas.</p>
+      <% } %>
+
+      <div class="grid">
+        <% tasks.forEach(function(task) { %>
+          <div class="card">
+            <h2 class="title"><%= task.title %></h2>
+            <p class="desc"><%= task.description ? task.description : "Sin descripción" %></p>
+            <div class="meta">Creada: <%= new Date(task.created_at).toLocaleString() %></div>
+            <div class="actions">
+              <a class="btn secondary" href="/tasks/<%= task.id %>/edit">Editar</a>
+              <form method="post" action="/tasks/<%= task.id %>/delete" onsubmit="return confirm('¿Seguro que deseas eliminar?');">
+                <button class="btn danger" type="submit">Eliminar</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+  </body>
+</html>
+

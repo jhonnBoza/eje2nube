@@ -1,0 +1,133 @@
+:root {
+  --bg: #0b1020;
+  --card: #121a33;
+  --text: #e7eaf4;
+  --muted: #aab0c2;
+  --primary: #7c5cff;
+  --primary2: #5b3dff;
+  --danger: #ff4d6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 20% 0%, #1a2352, transparent),
+    radial-gradient(900px 500px at 90% 10%, rgba(124, 92, 255, 0.25), transparent),
+    var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 40px auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 70%),
+    var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.desc {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(124, 92, 255, 0.55);
+  background: linear-gradient(180deg, var(--primary), var(--primary2));
+  color: white;
+  padding: 9px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: var(--text);
+}
+
+.btn.danger {
+  border-color: rgba(255, 77, 109, 0.6);
+  background: linear-gradient(180deg, rgba(255, 77, 109, 0.95), rgba(255, 77, 109, 0.65));
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  outline: none;
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 6px;
+}
+
