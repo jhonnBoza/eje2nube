@@ -8,6 +8,7 @@ const connectionString =
 // habilitamos SSL automáticamente.
 const shouldUseSsl =
   process.env.RENDER === "true" ||
+  /render\.com/i.test(connectionString) ||
   /sslmode=require/i.test(connectionString) ||
   /ssl=true/i.test(connectionString);
 
